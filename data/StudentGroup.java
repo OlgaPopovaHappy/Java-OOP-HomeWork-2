@@ -1,13 +1,14 @@
 package data;
 
 import java.util.List;
-
+/** ДЗ - Создать класс StudentGroup, содержащая в себе
+    поля Teacher и список студентов. */
 public class StudentGroup {
     private Teacher teacher;
-    private List <Student> students;
+    private List<Student> students;
     private int groupNumber;
 
-    public StudentGroup(Teacher teacher, List <Student> students, int groupNumber) {
+    public StudentGroup(Teacher teacher, List<Student> students, int groupNumber) {
         this.teacher = teacher;
         this.students = students;
         this.groupNumber = groupNumber;

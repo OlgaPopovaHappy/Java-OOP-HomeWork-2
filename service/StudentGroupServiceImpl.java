@@ -1,32 +1,21 @@
 package service;
 
-import data.Student;
-import data.StudentGroup;
-import data.Teacher;
 import data.User;
 import util.ReaderFromTxt;
-;
 
-public class StudentGroupServiceImpl {
-    private StudentGroup group;
+public class StudentGroupServiceImpl implements GroupService {
 
-    public StudentGroupServiceImpl(StudentGroup group) {
-        this.group = group;
+    /** ДЗ -
+     * Создать класс StudentGroupServiceImpl, в котором
+     * реализована логика чтения Студентов и Преподавателя
+     * из файла txt (реализация чтения файла опциональна),
+     * создания класса StudentGroup и возвращения его.
+     */
+    @Override
+    public User createGroup(User StudentGroup) {
+        ReaderFromTxt.read(StudentGroup);
+        return StudentGroup;
     }
 
-    public StudentGroup getGroup() {
-        return group;
-    }
 
-    public void setGroup(StudentGroup group) {
-        this.group = group;
-    }
-
-    public Student read(Student student) {
-        return (Student) ReaderFromTxt.read(student);
-    }
-
-    public Teacher read(Teacher teacher) {
-        return (Teacher) ReaderFromTxt.read(teacher);
-    }
 }

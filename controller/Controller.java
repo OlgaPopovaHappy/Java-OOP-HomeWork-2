@@ -1,43 +1,27 @@
-/*
-1. Создать packege - controller. Работу продолжаем внем.
-
- 2. Создать класс Controller содержащий в себе необходимые
- интерфейсы в виде переменных, а в конструкторе создаем объекты
- конкретных реализацийю
-
- 3. Создаем метод CreateStudent(Student student) -
- реализующих логику, путем вызова соответствующих методов интерфейсов:
- a. Создания Студента
- b. Записи в файл Студента
- c. Чтения того, что записали
- d. Возвращаем в методе то, что мы прочли в файле
- */
 package controller;
 
 import data.Student;
 import data.StudentGroup;
-import service.DataService;
-
+import service.StudentGroupServiceImpl;
+import service.StudentServiceImpl;
 
 public class Controller {
-    private DataService studentService;
-    private DataService studentGroup;
+    private StudentServiceImpl studentService;
+    private StudentGroupServiceImpl studentGroupService;
 
-    public Controller(DataService studentService, DataService studentGroup) {
+    public Controller(StudentServiceImpl studentService) {
         this.studentService = studentService;
-        this.studentGroup = studentGroup;
     }
 
     public Student createStudent(Student student){
-        studentService.create(student);
-        return (Student) studentService.read(student);
+        studentService.create(student); // интерфейс.метод_интерфейса
+        return (Student) studentService.read((student));
     }
 
-    public Student writeStudent (Student student) {
-        studentService.create(student);
-        return (Student) studentService.read(student);
+    /** ДЗ - Создать метод в Controller createGroup(int groupNumber),
+        в который передается номер группы, а возвращается StudentGroup. */
+    public StudentGroup createGroup (int groupNumber) {
+        StudentGroup group = new StudentGroup(null, null, groupNumber);
+        return group;
     }
-
-
-
 }

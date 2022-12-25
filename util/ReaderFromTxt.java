@@ -4,11 +4,23 @@
  */
 package util;
 
+import data.Student;
+import data.Teacher;
 import data.User;
+
+import java.util.List;
 
 public class ReaderFromTxt {
 
     public static User read (User user){
+        return null;
+    }
+
+    public static Teacher readTeacher(int groupNumber) {
+        return null;
+    }
+
+    public static List<Student> readStudents(int groupNumber) {
         return null;
     }
 }

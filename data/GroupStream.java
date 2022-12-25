@@ -1,7 +1,5 @@
 package data;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.Iterator;
 import java.util.List;
 
@@ -10,18 +8,18 @@ import java.util.List;
  * и реализующий интерфейс Iterable<StudentGroup>
  */
 public class GroupStream implements Iterable<StudentGroup> {
-    private List<StudentGroup> studentGroupList;
+    private List<StudentGroup> studentGroup;
 
-    public GroupStream(List<StudentGroup> studentGroupList) {
-        this.studentGroupList = studentGroupList;
+    public GroupStream(List<StudentGroup> studentGroup) {
+        this.studentGroup = studentGroup;
     }
 
-    public List<StudentGroup> getStudentGroupList() {
-        return studentGroupList;
+    public List<StudentGroup> getStudentGroup() {
+        return studentGroup;
     }
 
-    public void setStudentGroupList(List<StudentGroup> studentGroupList) {
-        this.studentGroupList = studentGroupList;
+    public void setStudentGroup(List<StudentGroup> studentGroup) {
+        this.studentGroup = studentGroup;
     }
 
     @Override

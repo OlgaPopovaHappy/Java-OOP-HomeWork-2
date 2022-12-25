@@ -39,13 +39,11 @@ public class StudentGroupIterator implements Iterator<Student> {
         return cursor < students.size();
 //        return this.students.hasNext();
     }
-
     @Override
     public Student next() {
     return students.get(cursor++); // получаем студента, после перемещаемся на следующего
 //        return this.students.next();
     }
-
     @Override
     public void remove() {
         this.students.remove(cursor);

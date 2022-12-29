@@ -8,45 +8,14 @@ public class GroupStreamIterator implements Iterator<StudentGroup> {
     private List<StudentGroup> studentGroupList;
     private int cursor;
 
-    public GroupStreamIterator(GroupStream groupStream, List<StudentGroup> studentGroupList, int cursor) {
-        this.groupStream = groupStream;
-        this.studentGroupList = studentGroupList;
-        this.cursor = cursor;
-    }
-
     public GroupStreamIterator(GroupStream groupStream) {
         this.groupStream = groupStream;
-        this.studentGroupList = studentGroupList;
-        this.cursor = cursor;
-    }
-
-    public GroupStream getGroupStream() {
-        return groupStream;
-    }
-
-    public void setGroupStream(GroupStream groupStream) {
-        this.groupStream = groupStream;
-    }
-
-    public List<StudentGroup> getStudentGroupList() {
-        return studentGroupList;
-    }
-
-    public void setStudentGroupList(List<StudentGroup> studentGroupList) {
-        this.studentGroupList = studentGroupList;
-    }
-
-    public int getCursor() {
-        return cursor;
-    }
-
-    public void setCursor(int cursor) {
-        this.cursor = cursor;
+        this.studentGroupList = groupStream.getStudentGroupList();
     }
 
     @Override
     public boolean hasNext() {
-        return  cursor < studentGroupList.size();
+        return cursor < studentGroupList.size();
     }
 
     @Override
